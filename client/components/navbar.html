@@ -1,0 +1,45 @@
+<template name="navbar">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light container">
+	  <a class="navbar-brand" href="#">Navbar</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	    	<!-- this is from the active path lib. You tell it to look for a matching regex string and if it matches, it auto add's the class 'active' to the element. In bootstrap (and many css libs), there's a prebuilt rule for a nav path if it has the active class to be 'bolded' so this is just taken care of for you.-->
+	      <li class="nav-item {{isActivePath regex='/home'}}">
+	        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item {{isActivePath regex='/yeshivot'}}">
+	        <a class="nav-link" href="/yeshivot">Yeshivot <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item {{isActivePath regex='/home'}}">
+	        <a class="nav-link" href="/">Seminaries <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item {{isActivePath regex='/hakotel'}}">
+	        <a class="nav-link" href="/hakotel">Hakotel</a>
+	      </li>
+	      <!-- <li class="nav-item {{isActivePath regex='/quotes'}}">
+	        <a class="nav-link" href="/quotes/hakotel">Quotes</a>
+	      </li> -->
+
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Dropdown
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          {{#each schools}}
+	            <a class="dropdown-item" href="/quotes/{{_id}}">{{name}}</a>
+	            {{/each}}
+	        </div>
+	      </li>
+	      
+	    </ul>
+	    <form class="form-inline my-2 my-lg-0">
+	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	    </form>
+	  </div>
+	</nav>
+</template>

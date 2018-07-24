@@ -1,0 +1,29 @@
+<template name="addNewQuote">
+<div class="container">
+    <h1>Submit a New Quote</h1>
+      <form class="new-quote">
+      	<div class="form-group">
+      		<label for="title">Title</label>
+        <input type="text" name="title" placeholder="Title for your quote" />
+    	</div>
+      	<div class="form-group">
+      		<label for="quote">Quote</label>
+        <input type="text" name="quote" placeholder="Add Your Quote" />
+    	</div>
+        <div class="form-group">
+    		<label for="category">Category</label>
+    		<select class="form-control" id="category">
+      			<option>What to Pack</option>
+      			<option>Stuff Near You</option>
+     			<option>Take Advantage</option>
+   		 	</select>
+  		</div>
+ 	 <div class="form-group">
+      	<label for="tag">Tags</label>
+        <input type="text" name="tag" placeholder="Tag for this quote" />
+    </div>
+    <input type="submit" value="Submit">
+      </form>
+ 	
+   </div>
+</template>

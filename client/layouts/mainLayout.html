@@ -1,0 +1,20 @@
+<!--This will be used as the layout in FlowRouter (router.js)-->
+<template name="mainLayout">
+	<div class="wrapper">
+		<!-- Navbar and footer are imported from other templates (navbar.html and footer.html)
+			They will always be present regardless of what route you're on if you tell FlowRouter
+			to use 'mainLayout'-->
+		{{> navbar}}
+
+		<div class="content-wrapper container">
+			<!-- This is the dynamic content that FlowRouter will feed into the view based on the route
+				You tell it to load the template which contains navbar and footer
+				And then you can tell it which template to load as the dynamic template (like a variable)
+				To load it, you write what you see below. It's a function that has a parameter 'template' and you feed it 'content'.
+				Check the router to see why this works-->
+			{{> Template.dynamic template=content}}
+		</div>
+
+		{{> footer}}
+	</div>
+</template>

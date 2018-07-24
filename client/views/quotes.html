@@ -1,0 +1,29 @@
+<template name="quotes">
+	{{#if quotes.[0]}}
+			{{#each quotes}}
+				
+				    <div class="caption">
+				    	{{category}}
+				    </div>
+				    <div class="post-title">
+				    	{{title}}
+				    </div>
+				    <div class="quote-text">
+				    	{{quote}}
+				    </div>
+				    <div class="tag">
+				    	{{tag}}
+				    </div>
+				    <div class="tag" style="float:right;">
+				    	{{emails}}
+				    </div>
+				    <div style="clear: both;"></div>
+				<hr>
+			{{/each}}
+	{{else}}
+		<h4>Sorry, there are no quotes for {{school}}.</h4>
+	{{/if}}
+
+	<h5>Showing: {{quoteCount}}</h5>
+	<a class="btn btn-primary" id="load-more">Load More</a>
+</template>
