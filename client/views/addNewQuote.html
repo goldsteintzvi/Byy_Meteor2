@@ -13,9 +13,9 @@
         <div class="form-group">
     		<label for="category">Category</label>
     		<select class="form-control" id="category">
-      			<option>What to Pack</option>
-      			<option>Stuff Near You</option>
-     			<option>Take Advantage</option>
+          {{#each categories}}
+            <option value="{{this.key}}" style="text-transform: capitalize;">{{this.full}}</option>
+          {{/each}}
    		 	</select>
   		</div>
  	 <div class="form-group">
@@ -24,6 +24,6 @@
     </div>
     <input type="submit" value="Submit">
       </form>
- 	
+
    </div>
 </template>

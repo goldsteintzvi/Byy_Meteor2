@@ -19,18 +19,19 @@ Meteor.startup(() => {
 			Schools.insert(schoolObj);
 		});
 	};
-	const categoryArr = ['What To Expect', 'Things Near You', 'Take Advantage'];
+
+	const categoryArr = ['what_to_pack', 'stuff_near_you', 'take_advantage'];
 	if (!Quotes.findOne()) {
 	  	const
 	  		quotesSeed = [];
 
 	  	for (var i = 0; i < 100; i++) {
-	  		const 
-	  			insObj 				= {};
-	  			insObj.text 		= `Text: ${i}`;
-	  			insObj.tag 			= `Tag: ${i}`;
-	  			insObj.category     = categoryArr[i%3];
-	  			insObj.checked 		= Math.random() > .5 ? true : false;
+	  		const
+	  			insObj 					= {};
+	  			insObj.title 			= 'Title goes here';
+	  			insObj.quote 			= `Text: ${i}`;
+	  			insObj.tag 				= `Tag: ${i}`;
+	  			insObj.category   = categoryArr[i%3];
 	  			insObj.school_id 	= Schools.find().fetch()[Math.random() > .5 ? 0 : 1]._id;
 
 	  		quotesSeed.push(insObj);
